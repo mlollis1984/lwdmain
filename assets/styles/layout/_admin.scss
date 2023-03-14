@@ -1,0 +1,44 @@
+body {
+  background:$honeyBack;
+  color:$lightGray;
+}
+
+.mainContent {
+  background-color: $pearl;
+  min-height:80vh;
+}
+
+.navbar {
+  background-color:$yellow!important;
+}
+
+.formContainer {
+  display:none;
+}
+.form-check { display: none; }
+
+.socialMediaList, .otherPagesList, .mainPagesList { list-style-type: none; }
+
+.trash {
+  display:block;
+  width: 30px;
+  height: 45px;
+  background-image: url("../../images/trashClosed.png");
+  background-size:100%;
+  float:right;
+}
+.trash:hover {
+  background-image: url("../../images/trashOpen.png");
+}
+
+.listHome {
+  display:block;
+  width: 30px;
+  height: 45px;
+  background-image: url("../../images/backButton.png");
+  background-size:100%;
+  float:right;
+}
+.listHome:hover {
+  background-image: url("../../images/backButtonHover.png");
+}

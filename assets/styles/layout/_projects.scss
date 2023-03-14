@@ -1,0 +1,61 @@
+.project {
+  width: 100%;
+  color: #444;
+  margin-bottom:50px;
+}
+.project img {
+  width:100%;
+  z-index:-1;
+  border:2px solid $blue;
+}
+.project p {
+  font-size: 0.6em;
+  margin-top: 10px;
+  color: grey;
+}
+.ribbon {
+  --p: 10px;
+  background-color: $blue;
+  padding: 0 var(--p);
+  position: relative;
+  top:50px;
+  right: var(--p);
+  width: 50%;
+  color:white;
+  font-size:1em;
+  font-weight:bold;
+  text-align:center;
+}
+.ribbon:before{
+  background-color: inherit;
+  content:'';
+  display: block;
+  filter: brightness(.5);
+  height: 100%;
+  position: absolute;
+  width: var(--p);
+  top: calc(var(--p)/2);
+  z-index: -2;
+}
+.ribbon:before {
+  left: 0;
+  transform:skewy(45deg);
+}
+.project:link,
+.project:visited,
+.project:hover,
+.project:active{
+  text-decoration:none;
+}
+.project:active {
+  text-decoration:none;
+}
+.project:hover img {
+  border:2px solid $yellow;
+}
+.project:hover p {
+  color:black;
+}
+.project:hover .ribbon {
+  background-color: $yellow;
+}

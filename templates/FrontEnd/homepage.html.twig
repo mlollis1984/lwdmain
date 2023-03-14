@@ -1,5 +1,256 @@
-{% extends 'base.html.twig' %}
+{%  extends 'base.html.twig' %}
 
 {% block body %}
-    This is a test controller with the site that is going to be uploaded
+    {# Intro Video #}
+    <video autoplay muted class="fullscreen-bg_video d-none d-md-block">
+        <source src="{{ asset('build/images/HomeVideo.mp4') }}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div class="mobileIntro d-block d-md-none text-center">
+        <div class="header">
+            <ul class="p-0 mobileNav">
+                <li class="text-center"><a href="#services"><img src="{{ asset('build/images/mobileIcon-services.png') }}" class="pb-1" />Services</a></li>
+                <li class="text-center"><a href="#clients"><img src="{{ asset('build/images/mobileIcon-clients.png') }}" class="pb-1" />Clients</a></li>
+                <li class="text-center"><a href="#testimonials"><img src="{{ asset('build/images/mobileIcon-testimonials.png') }}" class="pb-1" />Testimonials</a></li>
+                <li class="text-center"><a href="#contact"><img src="{{ asset('build/images/mobileIcon-contact.png') }}" class="pb-1" />Contact</a></li>
+{#                <li class="text-center"><a href="{{ path('app_register') }}"><img src="{{ asset('build/images/mobileIcon-getStarted.png') }}" class="pb-1" />Get Started</a></li>#}
+            </ul>
+        </div>
+        <img class="pt-4" src="{{ asset('build/images/mobileHeader.png') }}">
+        <h2 class="text-center pt-4 pb-4">Front and Back-end Development and Online Application Solutions</h2>
+        <hr />
+        <img id="mobileFeatureImage1" class="pt-3 mt-0 mobileFeature" src="{{ asset('build/images/mobileHome/service1.jpg') }}" alt="services" />
+        <img id="mobileFeatureImage2" class="pt-3 mt-0 mobileFeature" src="{{ asset('build/images/mobileHome/service2.jpg') }}" alt="services" />
+        <img id="mobileFeatureImage3" class="pt-3 mt-0 mobileFeature" src="{{ asset('build/images/mobileHome/service3.jpg') }}" alt="services" />
+        <img id="mobileFeatureImage4" class="pt-3 mt-0 mobileFeature" src="{{ asset('build/images/mobileHome/service4.jpg') }}" alt="services" />
+        <img id="mobileFeatureImage5" class="pt-3 mt-0 mobileFeature" src="{{ asset('build/images/mobileHome/service5.jpg') }}" alt="services" />
+        <div id="typeWriter" class="typeWriter p-4 text-start"></div>
+    </div>
+
+    {# Intro Section #}
+    <div class="container intro">
+        {% for flash in app.flashes('success') %}
+            <div class="alert alert-success mt-3">{{ flash }}</div>
+        {% endfor %}
+        <div class="row">
+            <div class="col-8 offset-2">
+                <h1 class="pb-0 mt-5 d-none d-md-block text-center">Front and Back-end Development and Online Application Solutions</h1>
+                <p class="pt-2">
+                    In today’s market, every company, organization, or individual needs a website.
+                    However, your website can be more than and online business card and the hub of your online presence.
+                    Your website is a valuable tool that can improve your day-to-day business, improve operations and create
+                    convenience for your customer's. At Lollis Web Design, we not only create stunning website's that match our
+                    client's brands, but we improve their online marketing and create functionality in the website and mobile applications.
+                </p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-7 offset-sm-1">
+                <h4>Professional, custom websites that align with your brand that grow with your business.</h4>
+                <ul class="row">
+                    <li class="col-sm-6">Transform your business through technology.</li>
+                    <li class="col-sm-6">Automate tasks for customers and employees.</li>
+                    <li class="col-sm-6">Elevate your user experience.</li>
+                    <li class="col-sm-6">Future proof and scale your infrastructure.</li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+{#                {% if is_granted('ROLE_USER') %}#}
+                    <div class="col-10 offset-1 mb-3 mt-3 text-center">
+{#                        <a class="btn btn-primary w-100" href="{{ path('user_home') }}">User Admin Panel</a>#}
+                    </div>
+                    <div class="col-10 offset-1 text-center">
+{#                        <a class="btn btn-primary w-100" href="{{ path('app_logout') }}">Logout</a>#}
+                    </div>
+{#                {% else %}#}
+                    <div class="col-10 offset-1 mb-3 mt-3 text-center">
+{#                        <a class="btn btn-primary w-100" href="{{ path('app_login') }}">Login</a>#}
+                    </div>
+                    <div class="col-10 offset-1 text-center">
+{#                        <a class="btn btn-primary w-100" href="{{ path('app_register') }}">Register</a>#}
+                    </div>
+{#                {% endif %}#}
+            </div>
+        </div>
+    </div>
+
+    {# Services Section #}
+    <div class="container-fluid divider mt-5 pb-5 text-center" id="services">
+        <div class="container servicesContainer">
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="col-sm-4 mt-5">
+                    <img src="{{ asset('build/images/service-responsiveDesign.png') }}" alt="Responsive Design" />
+                    <h3 class="mb-4">Responsive Work Flow</h3>
+                    <p class="text-start">Our UI/UX design work on product's usability across all device sizes. We design the best choices for layouts, navigation and innovative design</p>
+                </div>
+                <div class="col-sm-4 mt-5">
+                    <img src="{{ asset('build/images/service-onlineBusiness.png') }}" alt="Online Business" />
+                    <h3 class="mb-4">Online Business Solutions</h3>
+                    <p class="text-start">We are not just web designers, but proud developers. Your website is more than an online brochure about your business, but a tool that offers convenience for your customers and offers business solutions.</p>
+                </div>
+                <div class="col-sm-4 mt-5">
+                    <img src="{{ asset('build/images/service-websiteMaintenance.png') }}" alt="Website Maintenance" />
+                    <h3 class="mb-4">Website Management</h3>
+                    <p class="text-start">It can be a challenge getting online, and that's just the start. We set up and manage servers, databases and deploy complex websites.</p>
+                </div>
+                <div class="col-sm-4 mt-5">
+                    <img src="{{ asset('build/images/service-socialMedia.png') }}" alt="Online Business" />
+                    <h3 class="mb-4">Social Media</h3>
+                    <p class="text-start">Online marketing can become a drain on your energy. We navigate all the tactics of social media and email marketing campaigns to help grow your customer base.</p>
+                </div>
+                <div class="col-sm-4 mt-5">
+                    <img src="{{ asset('build/images/service-mobileDevelopment.png') }}" alt="Mobile Applications" />
+                    <h3 class="mb-4">Mobile Applications</h3>
+                    <p class="text-start">Along with our mobile friendly website, we also craft the most innovative & eye catchy mobile applications to work on iOS and Android platforms.</p>
+                </div>
+                <div class="col-sm-4 mt-5">
+                    <img src="{{ asset('build/images/service-adminPortals.png') }}" alt="Administrative Portals" />
+                    <h3 class="mb-4">Administrative Portals</h3>
+                    <p class="text-start">We have built all sorts of web applications with online forms, payment processing, and administrative management systems. We work on projects both big and small.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Portfolio Section #}
+    <div class="container mb-5" id="clients">
+        <div class="row"></div>
+        <div class="col-12 text-center">
+            <h2 class="mb-3 mt-5">Join Our List of Clients</h2>
+            <div class="col-8 offset-2">As your trusted technology partner, we will keep you ready for online growth. Our scalable, well maintenanced websites keep your business ready for your future technological growth.</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="https://laurenvincentmassage.com/" target="_blank" class="project">
+                    <header class="ribbon">Lauren Vincent</header>
+                    <img src="{{ asset('build/images/LaurenVincent.jpg') }}" class="project-image"/>
+                </a>
+            </div>
+
+            <div class="col-sm-4">
+                <a href="https://sunbeltlessors.com/" target="_blank" class="project">
+                    <header class="ribbon">Sunbelt Lessors</header>
+                    <img src="{{ asset('build/images/SunbeltLessors.jpg') }}" class="project-image"/>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {# Testimonial Section #}
+    <div class="divider text-center pt-5 pb-5" id="testimonials">
+        <div class="container">
+            <div class="row justify-content-sm-center">
+                <div class="col-sm-10">
+                    <h2 class="mb-5">Testimonials</h2>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-4 offset-4 offset-sm-0 col-sm-3 text-center pb-5">
+                    <img src="{{ asset('build/images/testimonial-icon.png') }}" class="testimonialProfileImage w-75"/>
+                </div>
+{#                {% for testimonial in testimonials %}#}
+{#                    <div class="col-10 offset-1 offset-sm-0 col-sm-9 testimonial" id="testimonial_{{ loop.index0 }}">#}
+{#                        <p class="testimonialContent">{{ testimonial.body }}</p>#}
+{#                        <span class="testimonialAuthor">-{{ testimonial.author }}</span>#}
+{#                    </div>#}
+{#                {% endfor %}#}
+            </div>
+
+            <div class="row">
+                <div class="col-6 offset-3 col-sm-4 offset-sm-8 text-center text-sm-end mt-3">
+                    <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#testimonialModal">Leave a Testimonial</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Contact Section #}
+    <div class="container" id="contact">
+        <div class="row">
+            <div class="col-sm-8 offset-sm-2">
+                <h2 class="mb-3 mt-5 text-center">Get In Touch</h2>
+            </div>
+            <div class="col-sm-6 offset-sm-3">
+
+{#                {{ form_start(messageForm) }}#}
+{#                <div class="row mb-2">#}
+{#                    <div class="col-6">#}
+{#                        {{ form_row(messageForm.firstName) }}#}
+{#                    </div>#}
+{#                    <div class="col-6">#}
+{#                        {{ form_row(messageForm.lastName) }}#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="row mb-2">#}
+{#                    <div class="col-sm-6">#}
+{#                        {{ form_row(messageForm.email) }}#}
+{#                    </div>#}
+{#                    <div class="col-sm-6">#}
+{#                        {{ form_row(messageForm.phone) }}#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="row mb-2">#}
+{#                    <div class="col-12">#}
+{#                        {{ form_row(messageForm.subject) }}#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="row mb-2">#}
+{#                    <div class="col-12">#}
+{#                        {{ form_row(messageForm.message) }}#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="row mb-4">#}
+{#                    <div class="col-12 text-end">#}
+{#                        <button type="submit" class="btn btn-primary">Send Message</button>#}
+{#                    </div>#}
+{#                </div>#}
+{#                {{ form_end(messageForm) }}#}
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+{#        {% if is_granted('ROLE_ADMIN') %}#}
+{#            {{ app.user.firstName }}#}
+{#            <a href="{{ path('admin_home') }}">Admin</a>#}
+{#        {% endif %}#}
+{#        {% if is_granted('ROLE_USER') %}#}
+{#            <a href="{{ path('app_logout') }}">Logout</a>#}
+{#        {% else %}#}
+{#            <a href="{{ path('app_login') }}">Login</a>#}
+{#            <a href="{{ path('app_register') }}">Sign Up</a>#}
+{#        {% endif %}#}
+    </footer>
+
+    {# Testimonial Modal#}
+    <div class="modal fade" id="testimonialModal" tabindex="-1" aria-labelledby="testimonialModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+{#                {{ form_start(testimonialForm) }}#}
+{#                <div class="modal-header">#}
+{#                    <h5 class="modal-title" id="exampleModalLabel">Leave a Review</h5>#}
+{#                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>#}
+{#                </div>#}
+{#                <div class="modal-body">#}
+{#                    {{ form_row(testimonialForm.author) }}#}
+{#                    {{ form_row(testimonialForm.body) }}#}
+{#                </div>#}
+{#                <div class="modal-footer">#}
+{#                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>#}
+{#                    <button type="submit" class="btn btn-primary">Submit</button>#}
+{#                </div>#}
+{#                {{ form_end(testimonialForm) }}#}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('mobile_animation') }}
+    {{ encore_entry_script_tags('rotate_testimonial') }}
 {% endblock %}

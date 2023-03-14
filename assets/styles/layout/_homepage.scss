@@ -1,0 +1,52 @@
+/*Page Specific CSS*/
+//.fullscreen-bg_video {
+//  width:100%;
+//  height:auto !important;
+//}
+.intro h1{
+  font-weight:600;
+  font-size:3rem;
+}
+.servicesContainer img {
+  width:50%;
+}
+.testimonial {
+  display:none;
+}
+.testimonialContent {
+  text-align:left;
+}
+.testimonialAuthor {
+  float:right;
+  color:$yellow;
+}
+.testimonial_link {
+  background-color: $yellow;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+}
+.contactTitle {
+  font-size:3rem;
+}
+.btn-secondary, .btn-secondary:focus {
+  background-color:$yellow;
+  color:black;
+}
+.btn-secondary:hover, .btn-secondary:active {
+  background-color:$darkYellow;
+  color:black;
+}
+.modal-header {
+  background-color:$blue;
+  color:white;
+}
+.modal-body, .modal-footer {
+  background-color:$pearl;
+}
